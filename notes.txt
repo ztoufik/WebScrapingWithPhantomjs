@@ -1,0 +1,10 @@
+spec:write in "offre.txt" file all the job offers of ouedkniss for n consecutive pages from the last
+programm workflow:
+    open the page
+    filter your choice 
+    wait for the page to load
+    for n times:
+            get all the jobs offers
+            write them to "offers.txt"
+            skip to the next page 
+            wait for the page to load

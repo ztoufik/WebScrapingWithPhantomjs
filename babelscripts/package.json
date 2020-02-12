@@ -1,0 +1,17 @@
+{
+  "name": "babelscripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cls && babel IO.js --out-file IOES5.js && babel Scrapper.js --out-file ScrapperES5.js && phantomjs.exe --config=../config.json ScrapperES5.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
