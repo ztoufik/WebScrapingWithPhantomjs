@@ -4,9 +4,9 @@ var system=require("system");
 var DAL=require(phantom.libraryPath + './IOES5.js');
 
 const url="https://www.ouedkniss.com/emploi_offres?agent=2";
-const periode_ms=4000;
-const n_pages=2;
-let page_index=1;
+const periode_ms=4000;// the time periods for waiting the loading the web page
+const n_pages=2;// the number of pages to scrap
+let page_index=1;// the number of pages that had been scraped
 page.settings.loadImages=false;
 
 // page.onUrlChanged  = function() {
@@ -17,6 +17,7 @@ page.onConsoleMessage = (msg)=> {
   system.stdout.writeLine( msg );
 };
 
+// the callback function responsible for getting, writing the data to the file and navigating to the next page
 function TimeoutCallBack()
 {
   let data=page.evaluate(()=>{
@@ -54,7 +55,7 @@ function TimeoutCallBack()
     phantom.exit();
   }
 }
-
+// the callback function responsible for selecting the filter
 function FilterFunctionCallBack()
 {
   try
@@ -87,5 +88,5 @@ function PageOpeningCallBack(status)
     phantom.exit();
   }
 }
-
+// start navigating
 page.open(url, PageOpeningCallBack);
